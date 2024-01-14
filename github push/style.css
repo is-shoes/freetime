@@ -1,0 +1,245 @@
+
+#tabsContainer {
+    margin-top: 20px;
+    
+}
+.header-title {
+    font-size: 22px;
+    margin: 0;
+    font-family: 'Monaco', sans-serif; 
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Monaco', sans-serif; 
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db89;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.header-middle {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+.header-title {
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Monaco', sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+.logo-container img {
+    max-height: 50px; 
+}
+.logo2-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.logo2-container img {
+    max-height: 100px;
+    align-items: right;
+}
+
+.navbar {
+    list-style-type: none;
+    margin-right: 10px;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul {
+    margin-left: auto; 
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+    color: #fff;
+}
+
+.header-title {
+    font-size: 34px;
+    margin: 0;
+}
+.logo-container img {
+    max-height: 50px; 
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+input[type=number] {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-left: 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 4px;
+  }
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px; 
+    background-color: #db8484; 
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    vertical-align: middle; 
+
+}
+
+button:hover {
+    background-color: #5a5a5a; 
+}
+  
+.tab {
+    position: relative;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tab-content {
+    text-align:left;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    border: 1px solid #8f4d26;
+    border-top: none; 
+    background-color: #dfe8ea; 
+    z-index: 10;
+    display: none;
+    transition: height 0.5s ease; 
+}
+input{
+    font-family:'Monaco',sans-serif;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 20;
+}
+.open-modal-btn {
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border: none;
+    font-size: 24px;
+    background-color: #4CAF50;
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.open-modal-btn:hover {
+    background-color: #648e66; 
+}
+
+
+.modal-content {
+    background-color: #ee9191;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 5px solid #888;
+    width: 80%; 
+    z-index: 20;
+}
+.modal-content label {
+    font-family: 'Monaco', sans-serif;
+}
+.createTabsBtn {
+    background-color: #2ecc71; 
+    color: #fff; 
+    padding: 35px 35px; 
+    border: none;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 25px;
+}
+
+.createTabsBtn:hover {
+    background-color: #27ae60; 
+}
+.close {
+
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+#finalBtn {
+    display: none;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+.output-stuff {
+    margin-left: 25px;
+}
+
+.aboutTitle {
+    margin-left: 10px;
+}
+
+.about-paragraph {
+    margin-left: 10px;
+}
+
+.aboutusimage {
+    justify-content: center;
+    margin-left: 198px;
+}

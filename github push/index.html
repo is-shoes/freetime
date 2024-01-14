@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freetime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="calendar.png" alt="Logo">
+        </div>
+        <div class="header-middle">
+            <a class="header-title" href="#schedule">freetime</a>
+        </div>
+        <nav> <div>
+            <ul class="navbar">
+                <li><a href="indexmain.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    </div>
+ 
+    <div class="button">
+        <input type="number" id="numSchedules" min="1" placeholder="Enter number ">
+        <button id="createTabsBtn" onclick="createTabs()">Display Schedules</button>
+        
+    </div>
+
+    <div class="button">
+        <button id="finalBtn" onclick="calculateAllFree()">Generate Freetime!™</button>
+
+    </div>
+    <br>
+
+    <div class="output-stuff">
+        <div id="outputContainer-Monday"></div>
+        <div id="outputContainer-Tuesday"></div>
+        <div id="outputContainer-Wednesday"></div>
+        <div id="outputContainer-Thursday"></div>
+        <div id="outputContainer-Friday"></div>
+        <div id="outputContainer-Saturday"></div>
+        <div id="outputContainer-Sunday"></div>
+        <div id="tabsContainer"></div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <form id="eventForm">
+
+                <input type="hidden" id="selectedDay" name="selectedDay" value="">
+                <div id="timeDropdownContainer">
+                    <label for="timeDropdown1">Select Start Time:</label>
+                    <select id="timeDropDown1"></select>
+
+                    <label for="timeDropdown2">Select End Time:</label>
+                    <select id="timeDropDown2"></select>
+                </div>
+                <div class="logo2-container">
+                    <img src="alarm.png" alt="Logo">
+                </div>
+                
+                <script>
+                    window.onload = function() {
+                        populateTimeDropdown('timeDropDown1');
+                        populateTimeDropdown('timeDropDown2');
+                    };
+                    function addTimeDropdowns() {
+                        const container = document.getElementById("timeDropdownContainer");
+                        
+                        const newDropdownsContainer = document.createElement("div");
+                        
+                        const startTimeLabel = document.createElement("label");
+                        startTimeLabel.textContent = "Start Time:";
+                        newDropdownsContainer.appendChild(startTimeLabel);
+                        
+                        const startTimeDropdown = document.createElement("select");
+                        startTimeDropdown.className = "timeDropdown";
+                        populateTimeOptions(startTimeDropdown);
+                        newDropdownsContainer.appendChild(startTimeDropdown);
+                        
+                        const endTimeLabel = document.createElement("label");
+                        endTimeLabel.textContent = "End Time:";
+                        newDropdownsContainer.appendChild(endTimeLabel);
+                        
+                        const endTimeDropdown = document.createElement("select");
+                        endTimeDropdown.className = "timeDropdown";
+                        populateTimeOptions(endTimeDropdown);
+                        newDropdownsContainer.appendChild(endTimeDropdown);
+                        
+                        container.appendChild(newDropdownsContainer);
+                    }
+                    function populateTimeDropdown(dropdownId) {
+                        const dropdown = document.getElementById(dropdownId);
+                        
+                        for (let hours = 0; hours < 24; hours++) {
+                            for (let minutes = 0; minutes < 60; minutes += 15) {
+                                const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+                                const option = document.createElement('option');
+                                option.value = formattedTime;
+                                option.text = formattedTime;
+                                dropdown.add(option);
+                            }
+                        }
+                    }
+                </script>
+
+                <label for="eventTitle">Event Title:</label>
+                <input type="text" id="eventTitle" name="eventTitle">
+                <br><br>
+                <input type="submit" name="submitbtn" value="Add Event">
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
