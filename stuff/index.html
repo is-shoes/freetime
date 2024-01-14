@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Schedule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <input type="number" id="numSchedules" min="1" placeholder="Enter number of schedules">
+        <button onclick="createTabs()">Create Tabs</button>
+    </div>
+    <div id="tabsContainer"></div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="eventForm">
+                <input type="hidden" id="selectedDay" name="selectedDay" value="">
+                <div id="timeDropdownContainer">
+                    <label for="timeDropdown1">Select Start Time:</label>
+                    <select id="timeDropDown1"></select>
+
+                    <label for="timeDropdown2">Select End Time:</label>
+                    <select id="timeDropDown2"></select>
+                </div>
+            
+
+                <br><br>
+                <label for="eventTitle">Event Title:</label>
+                <input type="text" id="eventTitle" name="eventTitle">
+                <br><br>
+                <input type="submit" value="Add Event">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            populateTimeDropdown('timeDropDown1');
+            populateTimeDropdown('timeDropDown2');
+        };
+            function addTimeDropdowns() {
+                const container = document.getElementById("timeDropdownContainer");
+        
+        
+                const newDropdownsContainer = document.createElement("div");
+        
+        
+                const startTimeLabel = document.createElement("label");
+                startTimeLabel.textContent = "Start Time:";
+                newDropdownsContainer.appendChild(startTimeLabel);
+        
+        
+                const startTimeDropdown = document.createElement("select");
+                startTimeDropdown.className = "timeDropdown";
+                populateTimeOptions(startTimeDropdown);
+                newDropdownsContainer.appendChild(startTimeDropdown);
+        
+        
+                const endTimeLabel = document.createElement("label");
+                endTimeLabel.textContent = "End Time:";
+                newDropdownsContainer.appendChild(endTimeLabel);
+        
+        
+                const endTimeDropdown = document.createElement("select");
+                endTimeDropdown.className = "timeDropdown";
+                populateTimeOptions(endTimeDropdown);
+                newDropdownsContainer.appendChild(endTimeDropdown);
+        
+        
+                container.appendChild(newDropdownsContainer);
+            }
+            function populateTimeDropdown(dropdownId) {
+                const dropdown = document.getElementById(dropdownId);
+        
+        
+                for (let hours = 0; hours < 24; hours++) {
+                    for (let minutes = 0; minutes < 60; minutes += 15) {
+                        const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+                        const option = document.createElement('option');
+                        option.value = formattedTime
+                        option.text = formattedTime;
+                        dropdown.add(option);
+                    }
+                }
+            }
+        </script>
+
+
+
+    <script src="script.js"></script> 
+</body>
+</html>
