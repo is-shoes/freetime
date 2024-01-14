@@ -1,8 +1,10 @@
 # hackathon
 
 
-hackathon project
+SB Hacks X project
 
-gayatri, cyrus, owen, angie
+This was our first ever project on this scale! We created an application that allows you to create weekly schedules and collaborate with your friends
 
-1/12/24
+angie, gayatri, cyrus, owen
+
+1/12/24-1/14/24
